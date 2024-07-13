@@ -1,4 +1,4 @@
-name: Build and Publish Distroless kallisto
+name: Build and Publish Distroless muscle
 
 on:
   push:
