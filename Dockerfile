@@ -1,14 +1,12 @@
 FROM debian:bullseye-slim AS builder
 
 RUN apt-get update && \
-   apt-get install -y git make gcc zlib1g-dev upx-ucl g++ 
+   apt-get install -y git make gcc zlib1g-dev upx-ucl g++ curl
 
 
 RUN git clone https://github.com/rcedgar/muscle.git && \
-   \    
   cd muscle/src && \
   bash build_linux.bash && \
-
   upx /muscle/src/Linux/muscle && \
   mkdir -p /data
 
