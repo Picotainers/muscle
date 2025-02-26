@@ -7,9 +7,8 @@ RUN apt-get update && \
 RUN git clone https://github.com/rcedgar/muscle.git && \
    \    
   cd muscle/src && \
-  sed -i '/^CXXFLAGS/s/$/ -static/' Makefile && \
-  sed -i '/^LDFLAGS/s/$/ -static/' Makefile && \
-  make && \
+  bash build_linux.bash && \
+
   upx /muscle/src/Linux/muscle && \
   mkdir -p /data
 
