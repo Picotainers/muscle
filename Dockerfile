@@ -1,7 +1,7 @@
 FROM debian:bullseye-slim AS builder
 
 RUN apt-get update && \
-   apt-get install -y git make gcc zlib1g-dev upx-ucl g++ curl
+   apt-get install -y git make gcc zlib1g-dev upx-ucl g++ curl python3
 
 
 RUN git clone https://github.com/rcedgar/muscle.git && \
